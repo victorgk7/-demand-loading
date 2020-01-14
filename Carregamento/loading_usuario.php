@@ -7,18 +7,18 @@
 	$max = $_POST['max'];
 
 	$query = "SELECT * FROM users";
-	$result_usuario_cont = mysqli_query($conn,$query);
-	$resultado = mysqli_num_rows($result_usuario_cont);
+	$result_users_cont = mysqli_query($conn,$query);
+	$resultado = mysqli_num_rows($result_users_cont);
 	$resuldData = "SELECT * FROM users LIMIT $inicio, $max";
-	$result_usuario = mysqli_query($conn, 	$resuldData);
+	$result_users = mysqli_query($conn, 	$resuldData);
 	
 	if($resultado > 0 ){
-		while($row_usuario = mysqli_fetch_assoc($result_usuario)){
+		while($row_user = mysqli_fetch_assoc($result_users)){
 			echo '<tr>
-			<td>'.$row_usuario['id'].'</td>
-			<td>'.$row_usuario['name'].'</td>
-			<td>'.$row_usuario['email'].'</td>
-			<td>'.$row_usuario['password'].'</td>
+			<td>'.$row_user['id'].'</td>
+			<td>'.$row_user['name'].'</td>
+			<td>'.$row_user['email'].'</td>
+			<td>'.$row_user['password'].'</td>
 			</tr>';
 		}
 	}
