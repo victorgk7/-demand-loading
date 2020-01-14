@@ -17,7 +17,7 @@ function carregar(min, max) {
 		type: 'POST',
 		data: { min, max },
 		success: function (response) {
-			$("#teste").append(response)
+			$("#TableOfData").append(response)
 		}
 	})
 
